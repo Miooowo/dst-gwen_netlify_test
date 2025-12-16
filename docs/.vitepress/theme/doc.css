@@ -1,0 +1,182 @@
+/* ============================================
+   文档页特定样式 (Document Page Styles)
+   ============================================ */
+
+
+
+/* Wiki风格右侧信息栏 */
+.character-infobox {
+  float: right;
+  width: 300px;
+  margin: 0 0 1.5rem 1.5rem;
+  background-color: rgba(255, 255, 255, 0.95);
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 8px;
+  padding: 1.25rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  clear: right;
+  position: relative;
+  z-index: 1;
+}
+
+.dark .character-infobox {
+  background-color: rgba(27,27,31, 0.8);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.character-infobox-header {
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+}
+
+.dark .character-infobox-header {
+  border-bottom-color: rgba(255, 255, 255, 0.1);
+}
+
+.character-infobox-image {
+  width: 100%;
+  margin-bottom: 1rem;
+  border-radius: 4px;
+}
+
+.character-infobox-section {
+  margin-bottom: 1rem;
+}
+
+.character-infobox-section-title {
+  font-weight: bold;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  padding-bottom: 0.25rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.dark .character-infobox-section-title {
+  border-bottom-color: rgba(255, 255, 255, 0.1);
+}
+
+.character-infobox-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.25rem 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.dark .character-infobox-row {
+  border-bottom-color: rgba(255, 255, 255, 0.05);
+}
+
+.character-infobox-label {
+  font-weight: 500;
+  flex: 1;
+}
+
+.character-infobox-value {
+  text-align: right;
+  flex: 1;
+}
+
+.character-infobox-list {
+  list-style: none;
+  padding: 0;
+  margin: 0.5rem 0;
+}
+
+.character-infobox-list li {
+  padding: 0.25rem 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.dark .character-infobox-list li {
+  border-bottom-color: rgba(255, 255, 255, 0.05);
+}
+
+.character-infobox-list li:last-child {
+  border-bottom: none;
+}
+
+/* 状态图标网格布局 - 图标并排显示 */
+.character-stats-grid {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  padding: 0.5rem 0;
+}
+
+/* 单个状态项 - 图标在上，数值在下 */
+.character-stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem;
+  flex: 1;
+  min-width: 0;
+}
+
+/* 状态图标样式 */
+.character-stat-item .stat-icon {
+  width: 32px;
+  height: 32px;
+  display: block;
+  flex-shrink: 0;
+  object-fit: contain;
+  cursor: help;
+}
+
+/* 状态数值样式 */
+.character-stat-item .stat-value {
+  font-size: 0.85rem;
+  font-weight: 500;
+  text-align: center;
+  color: inherit;
+}
+
+/* 图标悬停效果 */
+.character-stat-item .stat-icon:hover {
+  opacity: 0.8;
+  transform: scale(1.1);
+  transition: all 0.2s ease;
+}
+
+/* 特殊物品网格布局 - 图标并排显示 */
+.character-items-grid {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  padding: 0.5rem 0;
+}
+
+/* 单个物品项 */
+.character-item-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  min-width: 0;
+}
+
+/* 物品图标样式 */
+.character-item-item .item-icon {
+  width: 48px;
+  height: 48px;
+  display: block;
+  flex-shrink: 0;
+  object-fit: contain;
+  cursor: help;
+}
+
+/* 物品图标悬停效果 */
+.character-item-item .item-icon:hover {
+  opacity: 0.8;
+  transform: scale(1.1);
+  transition: all 0.2s ease;
+}

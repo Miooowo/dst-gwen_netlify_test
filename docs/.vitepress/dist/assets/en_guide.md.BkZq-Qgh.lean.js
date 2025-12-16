@@ -1,0 +1,1 @@
+import{_ as t,c as a,o as i,ae as s}from"./chunks/framework.CHDT0Kbg.js";const g=JSON.parse('{"title":"Gwen","description":"","frontmatter":{},"headers":[],"relativePath":"en/guide.md","filePath":"en/guide.md"}'),o={name:"en/guide.md"};function r(n,e,c,l,d,h){return i(),a("div",null,[...e[0]||(e[0]=[s("",8)])])}const p=t(o,[["render",r]]);export{g as __pageData,p as default};

@@ -1,0 +1,251 @@
+/* ============================================
+   主页特定样式 (Home Page Styles)
+   ============================================ */
+/* 主页背景图 - 仅主页生效 */
+body:has(.VPHero) {
+  --vp-layout-max-width: 100%;
+  /* 增加内容区域最大宽度 */
+  --vp-content-max-width: 1800px;
+  position: relative;
+}
+
+/* 使用伪元素创建模糊背景层 - 仅主页生效 */
+body:has(.VPHero)::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('https://raw.githubusercontent.com/Miooowo/miowo_photobed/main/bg/Gwen_OriginalSkin.jpg');
+  background-size: cover;
+  background-position: top center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  filter: blur(3px);
+  z-index: -1;
+}
+
+/* 确保内容区域有半透明背景，提高可读性 - 仅主页生效 */
+/* 亮色模式 - 降低透明度以显示背景图 */
+body:has(.VPHero) .VPContent {
+  background-color: rgba(255, 255, 255, 0.5);
+  min-height: 100vh;
+}
+
+/* 暗色模式 - 更暗的背景 */
+.dark body:has(.VPHero) .VPContent {
+  background-color: rgba(13, 13, 13, 0.5);
+}
+
+/* 内容容器背景 - 亮色模式 - 仅主页生效 */
+body:has(.VPHero) main {
+  background-color: rgba(255, 255, 255, 0.6);
+  border-radius: 8px;
+  padding: 2rem;
+  margin: 1rem 1rem 1rem 0.5rem;
+  max-width: 1800px;
+  margin-left: 0.5rem;
+  margin-right: auto;
+}
+
+/* 暗色模式内容容器 */
+.dark body:has(.VPHero) main {
+  background-color: rgb(13, 13, 13);
+}
+
+/* 主页特定样式 - 限制高度不显示滚动条 */
+.VPContent:has(.VPHero) {
+  height: 100vh;
+  max-height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  z-index: 1;
+  /* 隐藏滚动条但保持滚动功能 */
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE 和 Edge */
+}
+
+/* 隐藏主页 WebKit 浏览器的滚动条 */
+.VPContent:has(.VPHero)::-webkit-scrollbar {
+  display: none;
+}
+
+/* 首页容器背景 */
+.VPHero {
+  background-color: transparent;
+}
+
+/* 主页 main 标签特殊处理 - 不显示滚动条 */
+main:has(.VPHero) {
+  height: calc(100vh - var(--vp-nav-height, 64px));
+  max-height: calc(100vh - var(--vp-nav-height, 64px));
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  margin: 0;
+  background-color: transparent;
+  border-radius: 0;
+  /* 隐藏滚动条但保持滚动功能 */
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE 和 Edge */
+}
+
+/* 隐藏主页 main 标签的滚动条 */
+main:has(.VPHero)::-webkit-scrollbar {
+  display: none;
+}
+
+/* 确保主页内容区域在两种模式下都透明 */
+main:has(.VPHero) .VPContent {
+  background-color: transparent;
+}
+
+.dark main:has(.VPHero) .VPContent {
+  background-color: transparent;
+}
+
+/* 主页导航栏 - 透明以显示背景图 */
+/* body:has(.VPHero) .VPNav {
+  background-color: rgba(255, 255, 255, 0.3) !important;
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+} */
+
+/* 暗色模式主页导航栏 - 接近不透明但仍显示背景 */
+/* body:has(.VPHero) .dark .VPNav {
+  background-color: rgba(0, 0, 0, 0.9) !important;
+  backdrop-filter: blur(4px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+} */
+
+/* 主页布局调整 - 适应视口高度，不显示滚动条 */
+.home,
+[class*="home"],
+body:has(.VPHero) {
+  height: 100vh;
+  max-height: 100vh;
+  overflow: visible;
+}
+
+/* 确保主页内容不遮挡导航栏 */
+/* body:has(.VPHero) .VPNav {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+} */
+
+/* 主页内容容器 */
+.home .VPContent,
+[class*="home"] .VPContent,
+body:has(.VPHero) .VPContent {
+  height: 100vh;
+  max-height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* 主页 main 标签 */
+.home main,
+[class*="home"] main,
+body:has(.VPHero) main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  padding: 0;
+  margin: 0;
+  background-color: transparent;
+  min-height: 0;
+  max-height: 100%;
+}
+
+/* Hero 区域调整 - 适用于主页 */
+main:has(.VPHero) .VPHero {
+  flex: 0 0 auto;
+  padding: 1rem 1rem 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Hero 标题调整 */
+main:has(.VPHero) .VPHero .name {
+  font-size: clamp(2rem, 5vw, 3rem);
+  margin-bottom: 0.25rem;
+}
+
+main:has(.VPHero) .VPHero .text {
+  font-size: clamp(1.2rem, 3vw, 1.5rem);
+  margin-bottom: 0.25rem;
+}
+
+main:has(.VPHero) .VPHero .tagline {
+  font-size: clamp(0.9rem, 2vw, 1rem);
+  margin-bottom: 0.5rem;
+}
+
+/* Hero 图片调整 */
+main:has(.VPHero) .VPHero .image {
+  max-height: 150px;
+  margin: 0.25rem 0;
+}
+
+/* Hero 按钮调整 */
+main:has(.VPHero) .VPHero .actions {
+  margin-top: 0.25rem;
+  gap: 0.5rem;
+}
+
+/* Features 区域调整 */
+main:has(.VPHero) .VPFeatures {
+  flex: 1 1 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 0.5rem 1rem;
+  overflow-y: auto;
+  min-height: 0;
+  max-height: 100%;
+  /* 隐藏滚动条但保持滚动功能 */
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE 和 Edge */
+}
+
+/* 隐藏 WebKit 浏览器的滚动条 */
+main:has(.VPHero) .VPFeatures::-webkit-scrollbar {
+  display: none;
+}
+
+/* Feature 卡片调整 - 亮色模式 */
+main:has(.VPHero) .VPFeature {
+  flex: 0 1 calc(33.333% - 0.75rem);
+  min-width: 180px;
+  max-width: 260px;
+  padding: 0.5rem;
+  background-color: rgba(255, 255, 255, 0.75);
+  border-radius: 8px;
+  backdrop-filter: blur(5px);
+}
+
+/* 暗色模式 Feature 卡片 */
+.dark main:has(.VPHero) .VPFeature {
+  background-color: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(5px);
+}
+
+/* Feature 标题和详情调整 */
+main:has(.VPHero) .VPFeature .title {
+  font-size: 1rem;
+  margin-bottom: 0.25rem;
+}
+
+main:has(.VPHero) .VPFeature .details {
+  font-size: 0.85rem;
+  line-height: 1.3;
+}
+

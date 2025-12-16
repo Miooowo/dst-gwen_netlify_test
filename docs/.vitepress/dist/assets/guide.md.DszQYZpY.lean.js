@@ -1,0 +1,1 @@
+import{_ as a,c as e,o as i,ae as s}from"./chunks/framework.CHDT0Kbg.js";const p=JSON.parse('{"title":"格温 (Gwen)","description":"","frontmatter":{},"headers":[],"relativePath":"guide.md","filePath":"guide.md"}'),o={name:"guide.md"};function r(c,t,n,l,d,h){return i(),e("div",null,[...t[0]||(t[0]=[s("",8)])])}const g=a(o,[["render",r]]);export{p as __pageData,g as default};
